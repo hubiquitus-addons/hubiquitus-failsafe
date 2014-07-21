@@ -1,0 +1,13 @@
+{
+  "camelcase": true,
+  "indent": 2,
+  "quotmark": "single",
+  "trailing": true,
+  "boss": true,
+  "esnext": true,
+  "expr": true,
+  "proto": true,
+  "sub": true,
+  "validthis": true,
+  "node": true
+}

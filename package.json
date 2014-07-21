@@ -1,0 +1,19 @@
+{
+  "name": "hubiquitus-failsafe",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://git@github.com:hubiquitus-addons/hubiquitus-failsafe"
+  },
+  "dependencies": {
+    "hubiquitus-core": "0.9.*",
+    "leveldown": "0.18.0",
+    "levelup": "0.18.5",
+    "lodash": "2.4.*",
+    "mongodb": "^1.4.7"
+  },
+  "bin": {
+    "h-deadqueue": "./batch.js"
+  },
+  "main": "./index.js"
+}
