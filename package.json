@@ -1,6 +1,6 @@
 {
   "name": "hubiquitus-failsafe",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "https://git@github.com:hubiquitus-addons/hubiquitus-failsafe"
