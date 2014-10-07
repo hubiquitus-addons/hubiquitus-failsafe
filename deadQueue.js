@@ -1,5 +1,5 @@
 var MongoClient = require('mongodb').MongoClient;
-var h = require('hubiquitus');
+var h = require('hubiquitus-core');
 var properties = require('./lib/properties');
 
 var logger = h.logger('hubiquitus:addons:falisafe:deadqueue');

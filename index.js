@@ -5,7 +5,7 @@ var properties = require('./lib/properties');
 var path = require('path');
 var program = require('commander');
 var levelup = require('levelup');
-var deadQueue = require('deadQueue');
+var deadQueue = require('./deadQueue');
 
 /**
  * Db path. Fetch from command line or use default.
@@ -93,7 +93,7 @@ function internalSend(from, to, key, msg, cb) {
     if (err) {
       logger.warn('Couldn\'t store message. Aborting send.', value);
       cb && cb(err);
-      return
+      return;
     }
 
     cb && cb();
@@ -105,7 +105,7 @@ function internalSend(from, to, key, msg, cb) {
     h.send(from, to, content, properties.sendTimeout, function (err) {
       if (err) {
         logger.debug('Couldn\'t send message : ', err);
-        return
+        return;
       }
 
       db.del(key, function (err) {
@@ -153,7 +153,7 @@ function processFailures() {
   });
 
   stream.on('end', cb);
-  stream.on('close', cb)
+  stream.on('close', cb);
 }
 
 /**
@@ -169,9 +169,11 @@ function monitoring(req) {
  * @param req
  */
 exports.stats = function () {
+  if (!db) return {};
+
   return {
     dbpath: dbpath,
     queueConcurrentSend: queueConcurrentSend,
-    leveldbStats: db.db.getProperty('leveldb.stats')
+    leveldbStats: db.db.getProperty ? db.db.getProperty('leveldb.stats') : null
   };
 };

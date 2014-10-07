@@ -6,8 +6,9 @@
     "url": "https://git@github.com:hubiquitus-addons/hubiquitus-failsafe"
   },
   "dependencies": {
+    "commander": "^2.3.0",
     "hubiquitus-core": "0.9.*",
-    "leveldown": "0.18.0",
+    "leveldown": "0.10.2",
     "levelup": "0.18.5",
     "lodash": "2.4.*",
     "mongodb": "^1.4.7"
@@ -15,5 +16,9 @@
   "bin": {
     "h-deadqueue": "./batch.js"
   },
-  "main": "./index.js"
+  "main": "./index.js",
+  "registry": {
+    "type": "git",
+    "url": "git@github.com:INTENT-TECHNOLOGIES/npmrepo.git"
+  }
 }
