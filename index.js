@@ -132,7 +132,7 @@ function processFailures() {
     }
 
     if ((data.value.sendAt + properties.sendTimeout) < now) { // if we need to re-send
-      if (data.key.time > properties.maxTimeout) { // too old, send to dead queue
+      if (data.key.time + properties.maxTimeout < now) { // too old, send to dead queue
         queueConcurrentSend++;
         internalSend(cid, properties.deadQueue, data.key, data.value.msg, function () {
           queueConcurrentSend--;

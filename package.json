@@ -16,9 +16,6 @@
   "bin": {
     "h-deadqueue": "./batch.js"
   },
-  "main": "./index.js",
-  "registry": {
-    "type": "git",
-    "url": "git@github.com:INTENT-TECHNOLOGIES/npmrepo.git"
-  }
+  "main": "./index.js"
 }
+
